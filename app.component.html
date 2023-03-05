@@ -1,0 +1,17 @@
+<h1>{{ title }}</h1>
+
+<ul>
+  <li *ngFor="let task of tasks">
+    {{ task.title }} - {{ task.description }} ({{ task.done ? 'Done' : 'Not done' }})
+  </li>
+</ul>
+
+<form (submit)="createTask(title.value, description.value)">
+  <label>Title:</label>
+  <input #title required>
+  <br>
+  <label>Description:</label>
+  <textarea #description required></textarea>
+  <br>
+  <button type="submit">Create</button>
+</form>
